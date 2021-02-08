@@ -1,0 +1,24 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service #名称
+  datasource:
+    #8.0.20版本mysql需要在URL后面添加如下配置
+    #useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/yun6?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+mybatis:
+  configuration:
+  #用于接口调用时控制台打印SQL语句
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
